@@ -1,0 +1,55 @@
+{
+	"name": "scaffold-serverless-service-vscode",
+	"displayName": "Scaffold Serverless Service",
+	"description": "Scaffolds a Serverless Service.",
+	"version": "1.0.1",
+	"publisher": "squaredup",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/squaredup/scaffold-serverless-service-vscode"
+	},
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:scaffold-serverless-service-vscode.scaffold"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "scaffold-serverless-service-vscode.scaffold",
+				"title": "Scaffold Service"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "explorerResourceIsFolder",
+					"command": "scaffold-serverless-service-vscode.scaffold",
+					"group": "2_workspace"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.44.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.1",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"scaffold-serverless-service": "0.0.8"
+	}
+}
